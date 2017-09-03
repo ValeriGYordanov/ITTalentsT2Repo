@@ -22,5 +22,12 @@ public class TestClass {
 		System.out.println("=======================================");
 		String address = Utility.generateAddress();
 		System.out.println("Testing random address : " + address);
+		
+		System.out.println("=======================================");
+		Type type = Utility.getRandomENUM(Type.values());
+		System.out.println("Testing random ENUM : " + type);
+		
+
 	}
+
 }

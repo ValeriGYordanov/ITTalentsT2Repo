@@ -52,4 +52,16 @@ public final class Utility {
 							};
 		return cities [Utility.RANDOM.nextInt(cities.length)];
 	}
+	/*
+	 * public static <T> T randomElement(T[] elements) {
+		return elements[rand.nextInt(elements.length)];
+		}
+		като се извиква така :
+		randomElement( <- тук си слагаш името на Enuma -> .values())
+	 */
+	public static <T> T getRandomENUM(T[] type){
+		return type[Utility.RANDOM.nextInt(type.length)];
+		
+	}
+	
 }
