@@ -18,5 +18,9 @@ public class TestClass {
 		System.out.println("=======================================");
 		String name = Utility.generateName();
 		System.out.println("Testing random name : " + name);
+	
+		System.out.println("=======================================");
+		String address = Utility.generateAddress();
+		System.out.println("Testing random address : " + address);
 	}
 }

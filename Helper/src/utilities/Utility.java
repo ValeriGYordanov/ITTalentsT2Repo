@@ -35,5 +35,21 @@ public final class Utility {
 		return names[Utility.RANDOM.nextInt(names.length)];
 	}
 
+	public static String generateAddress() {
+		String [] address = {"бул. България №","ул. Витоша №","бул. Сливница №","ул. Раковски №","ул. К.Охридски №","бул. Дондуков №",};
+		return "гр. "+generateLocalCity()+" "+address[Utility.RANDOM.nextInt(address.length)] +""+Utility.RANDOM.nextInt((30)+1);
+	}
 	
+	public static String generateLocalCity() {
+		String [] cities = {"София","Пловдив","Варна",
+							"Бургас","Ямбол","Стара Загора",
+							"Видин","Перник","Краснодар",
+							"Смолян","Асеновград","Несебър",
+							"Слънчев Бряг","Китен","Добрич",
+							"Плевен","Хасково","Харманли",
+							"Дупница","Димитровград","Айтос",
+							"Велико Търново","Пазарджик","Каварна"
+							};
+		return cities [Utility.RANDOM.nextInt(cities.length)];
+	}
 }
