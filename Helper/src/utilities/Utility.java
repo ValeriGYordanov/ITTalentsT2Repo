@@ -3,6 +3,7 @@ package utilities;
 import java.util.Random;
 import java.util.Scanner;
 
+
 public final class Utility {
 
 	public static final Random RANDOM = new Random();
@@ -19,7 +20,7 @@ public final class Utility {
 		}else {
 			start += "9";
 		}
-		String end = Integer.toString(Utility.RANDOM.nextInt(8999999)+1000000);
+		String end = Integer.toString(Utility.RANDOM.nextInt(8999999)+7000000);
 		return start+end;
 	}
 
@@ -52,16 +53,30 @@ public final class Utility {
 							};
 		return cities [Utility.RANDOM.nextInt(cities.length)];
 	}
-	/*
-	 * public static <T> T randomElement(T[] elements) {
-		return elements[rand.nextInt(elements.length)];
-		}
-		като се извиква така :
-		randomElement( <- тук си слагаш името на Enuma -> .values())
-	 */
+	
+	//Call This : Utility.getRandomEnum(<-Your Enum name -> .values())
 	public static <T> T getRandomENUM(T[] type){
 		return type[Utility.RANDOM.nextInt(type.length)];
 		
 	}
 	
+	public static String generateRandomString() {
+		String [] randomWord = {"text","cafemachine","copier","ashtray","cupofjuice","cigarette","lighter",
+				"dog","laptop","personalcomputer","keyboard","mousepad","mouse","door","glass","lamp","movie","television","horror",
+				"sandals","shoes","cover","element","sound","wooden","shield","zombie","skype","meeting","refuse","defuse","relation","progress"};
+		return randomWord[Utility.RANDOM.nextInt(randomWord.length)];
+	}
+	
+	public static char[] generatePassword() {
+		char [] password = new char[Utility.RANDOM.nextInt(10)+6];
+		for (int i = 0; i < password.length; i++) {
+			boolean nextIsDigit = Utility.RANDOM.nextBoolean();
+			if (nextIsDigit) {
+				password[i] = (char) ((char)Utility.RANDOM.nextInt(10)+49);
+			}else {
+				password[i] = (char)((char)Utility.RANDOM.nextInt(25)+97);
+			}
+		}
+		return password;
+	}
 }
